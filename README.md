@@ -31,16 +31,20 @@ It's just a more accurate version of:
 
 ```js
 let resolver
-let promise = new Promise(r => { resolver = r })
+let promise = new Promise(r => {
+  resolver = r
+})
 
 const auth = () => {
   promise = Promise.resolve("my-secret-token")
   resolver(promise)
 }
 
-const afterAuth = promise.then(token => {
+const afterAuth = cb => promise.then(cb)
+
+afterAuth(token => {
   console.log("Authorized", token)
-)
+})
 ```
 
 With some additions
