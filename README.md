@@ -1,17 +1,17 @@
-# Wait, then GO
+# Wait and go
 
 Tiny util to create cached + "wait-on" callbacks
 
 ## Installation
 
 ```
-yarn add wait-then-go
+yarn add wait-and-go
 ```
 
 ## Usage
 
 ```js
-import createWaiter from "wait-then-go"
+import createWaiter from "wait-and-go"
 
 // Create a Hachi
 const afterAuth = createWaiter("After you are authorized")
