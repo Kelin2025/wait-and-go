@@ -1,0 +1,9 @@
+{
+  "name": "wait-and-go",
+  "version": "0.1.0",
+  "keywords": [
+    "promise",
+    "delay",
+    "wait"
+  ]
+}
