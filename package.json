@@ -1,7 +1,7 @@
 {
   "name": "wait-and-go",
   "description": "Tiny util to create cached + \"wait-on\" callbacks",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "promise",
     "delay",
