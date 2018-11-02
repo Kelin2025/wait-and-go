@@ -47,4 +47,22 @@ afterAuth(token => {
 })
 ```
 
+## React hook (WHY NOT LUL)
+
+```js
+import createWaiter from "wait-and-go"
+import { useWaiter } from "wait-and-go/react"
+
+const afterAuth = createWaiter("After you are authorized")
+
+const UserInfo = () => {
+  const { isLoaded, data } = useWaiter(afterAuth)
+
+  return isLoaded && <span>{data.nickname}</span>
+}
+
+// Somewhere
+afterAuth({ nickname: "Kelin2025" })
+```
+
 With some additions
