@@ -1,9 +1,17 @@
 {
   "name": "wait-and-go",
+  "description": "Tiny util to create cached + \"wait-on\" callbacks",
   "version": "0.1.0",
   "keywords": [
     "promise",
     "delay",
     "wait"
-  ]
+  ],
+  "author": {
+    "name": "Anton Kosykh",
+    "email": "kelin2025@yandex.ru"
+  },
+  "repository": {
+    "url": "https://github.com/kelin2025/wait-and-go"
+  }
 }
