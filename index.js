@@ -1,30 +1,16 @@
 const createWaiter = name => {
-  let resolver = null
-
-  let prev = new Promise(resolve => {
-    resolver = resolve
-  })
+  const cbs = []
 
   const waitAndGo = (cb, params) => {
-    let next = prev
-    if (!params || !params.skipFailed) {
-      next = prev.catch(() => null)
-    }
-    next = prev.then(prev => Promise.resolve(cb(prev)))
+    cbs.push(cb)
+  }
 
-    if (params && params.replace) {
-      prev = next
-    }
-
-    return next
+  const resolve = payload => {
+    cbs.forEach(cb => cb(payload))
   }
 
   waitAndGo.do = cb => {
-    prev = Promise.resolve(cb())
-    if (resolver) {
-      resolver(prev)
-      resolver = null
-    }
+    Promise.resolve(cb()).then(resolve)
   }
 
   return waitAndGo
